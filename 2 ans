@@ -1,0 +1,35 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+ 
+
+int Platform(int arr[], int d[], int n)
+{
+    
+    int p = 1, r = 1;
+ 
+    // Run a nested for-loop to find the overlap
+    for (int i = 0; i < n; i++) {
+        p = 1;
+        for (int j = 0; j < n; j++) {
+            if (i != j)
+                
+                if (arr[i] >= arr[j] && d[j] >= arr[i])
+                    p++;
+        }
+ 
+        
+        r = max(p, r);
+    }
+    return result;
+}
+ 
+
+int main()
+{
+    int arr[] = { 100, 300, 500 };
+    int d[] = { 900, 400, 600 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+    cout << Platform(arr, d, n);
+    return 0;
+}
